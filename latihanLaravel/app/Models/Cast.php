@@ -16,4 +16,9 @@ class Cast extends Model
     'umur',
     'bio'
   ];
+
+  public function films()
+  {
+    return $this->belongsToMany(Film::class, 'cast_film');
+  }
 }

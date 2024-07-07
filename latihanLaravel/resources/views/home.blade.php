@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Halaman Utama</title>
-</head>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-<body>
-    <h1>SanberBook</h1>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-    <h2>Social Media Developer Santai Berkualitas</h2>
-
-    <h4>Belajar dan Berbagi agar hidup ini semakin santai berkualitas</h4>
-
-    <h2>Benefit Join di SanberBook</h2>
-    <h4>
-        <ul>
-            <li>Mendapatkan motivasi dari sesama developer</li>
-            <li>Sharing knowladge dari para mastah Sanber</li>
-            <li>Dibuat oleh calon web developer terbaik</li>
-        </ul>
-    </h4>
-
-    <h2>Cara Bergabung ke SanberBook</h2>
-    <h4>
-        <ol>
-            <li>Mengunjungi Website ini</li>
-            <li>Mendaftar di <a href="/tabregister">Form Sign Up</a></li>
-            <li>Selesai!</li>
-        </ol>
-    </h4>
-</body>
-
-</html>
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
